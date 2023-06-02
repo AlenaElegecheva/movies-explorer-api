@@ -20,6 +20,8 @@ const {
 } = celebrateParams;
 
 const allowedCors = [
+  'http://movies.elegan.nomoredomains.rocks',
+  'https://movies.elegan.nomoredomains.rocks',
   'localhost:3000',
 ];
 
