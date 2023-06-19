@@ -22,8 +22,8 @@ const {
 const allowedCors = [
   'http://movies.elegan.nomoredomains.rocks',
   'https://movies.elegan.nomoredomains.rocks',
-  'https://localhost:3000',
-  'https://localhost:3001',
+  'localhost:3000',
+  'localhost:3001',
 ];
 
 router.use(cors({
