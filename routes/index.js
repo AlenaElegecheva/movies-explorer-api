@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
 // eslint-disable-next-line import/no-extraneous-dependencies
-const cors = require('cors');
+// const cors = require('cors');
 const usersRouter = require('./users');
 const moviesRouter = require('./movies');
 const {
@@ -19,17 +19,17 @@ const {
   password,
 } = celebrateParams;
 
-const allowedCors = [
-  'http://movies.elegan.nomoredomains.rocks',
-  'https://movies.elegan.nomoredomains.rocks',
-  'localhost:3000',
-  'localhost:3001',
-];
+// const allowedCors = [
+//   'http://movies.elegan.nomoredomains.rocks',
+//   'https://movies.elegan.nomoredomains.rocks',
+//   'localhost:3000',
+//   'localhost:3001',
+// ];
 
-router.use(cors({
-  origin: allowedCors,
-  credentials: true,
-}));
+// router.use(cors({
+//   origin: allowedCors,
+//   credentials: true,
+// }));
 
 router.post('/signin', celebrate({
   body: Joi.object().keys({
