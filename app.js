@@ -24,9 +24,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(helmet());
 app.use(limiter);
-app.use(corsHandler);
 app.use(requestLogger); // подключаем логгер запросов
 app.use('/', rootRoute);
+app.use(corsHandler);
 app.use(errorLogger); // подключаем логгер ошибок
 app.use(errors());
 app.use(genErrorHandler);
