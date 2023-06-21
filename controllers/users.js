@@ -90,7 +90,7 @@ module.exports.login = (req, res, next) => {
         httpOnly: true,
         sameSite: true,
       });
-      res.status(200).send('Успешный вход!');
+      res.status(200).send({ message: 'Успешный вход!' });
     })
     .catch((err) => {
       next(err);
@@ -99,7 +99,7 @@ module.exports.login = (req, res, next) => {
 
 module.exports.logout = (req, res) => {
   res.clearCookie('jwt');
-  res.status(200).send('Успешный выход!');
+  res.status(200).send({ message: 'Успешный выход!' });
 };
 
 module.exports.getUserInfo = (req, res, next) => {
