@@ -3,7 +3,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
 const helmet = require('helmet');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const cookieParser = require('cookie-parser');
 const rootRoute = require('./routes/index');
 const genErrorHandler = require('./middlewares/genErrorHandler');
