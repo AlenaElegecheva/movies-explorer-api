@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
-const cors = require('cors');
 const usersRouter = require('./users');
 const moviesRouter = require('./movies');
 const {
@@ -17,18 +16,6 @@ const {
   email,
   password,
 } = celebrateParams;
-
-const allowedCors = [
-  'http://movies.elegan.nomoredomains.rocks',
-  'https://movies.elegan.nomoredomains.rocks',
-  'https://localhost:3000',
-  'https://localhost:3001',
-];
-
-router.use(cors({
-  origin: allowedCors,
-  credentials: true,
-}));
 
 router.post('/signin', celebrate({
   body: Joi.object().keys({
