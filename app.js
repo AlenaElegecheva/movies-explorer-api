@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 const rootRoute = require('./routes/index');
 const genErrorHandler = require('./middlewares/genErrorHandler');
 const limiter = require('./middlewares/limiter');
+const corsHandler = require('./middlewares/cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const app = express();
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(helmet());
 app.use(limiter);
+app.use(corsHandler);
 app.use(requestLogger); // подключаем логгер запросов
 app.use('/', rootRoute);
 app.use(errorLogger); // подключаем логгер ошибок
