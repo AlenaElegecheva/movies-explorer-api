@@ -3,6 +3,8 @@ const allowedCors = [
   'https://movies.elegan.nomoredomains.rocks',
   'https://localhost:3000',
   'https://localhost:3001',
+  'http://localhost:3000',
+  'http://localhost:3001',
 ];
 
 function corsHandler(req, res, next) {
