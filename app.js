@@ -21,12 +21,12 @@ mongoose.connect(NODE_ENV === 'production' ? DB_CONNECTION : 'mongodb://127.0.0.
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(corsHandler);
 app.use(cookieParser());
 app.use(helmet());
 app.use(limiter);
 app.use(requestLogger); // подключаем логгер запросов
 app.use('/', rootRoute);
-app.use(corsHandler);
 app.use(errorLogger); // подключаем логгер ошибок
 app.use(errors());
 app.use(genErrorHandler);
