@@ -44,7 +44,7 @@ const userDataUpdate = (params, req, res, next) => {
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
         next(new BadDataError('Переданы некорректные данные'));
-      } else if (err.code === 11000) {
+      } else if (err.code === 11000 || err.code === 409) {
         next(new ConflictError('Данный email уже зарегистрирован.'));
       } else { next(err); }
     });
@@ -72,7 +72,7 @@ module.exports.createUser = (req, res, next) => {
         .catch((err) => {
           if (err instanceof mongoose.Error.ValidationError) {
             next(new BadDataError('Переданы некорректные данные'));
-          } else if (err.code === 11000) {
+          } else if (err.code === 11000 || err.code === 409) {
             next(new ConflictError('Данный email уже зарегистрирован.'));
           } else { next(err); }
         });
